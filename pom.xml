@@ -13,18 +13,19 @@
         <maven.compiler.target>8</maven.compiler.target>
         <aspectj.version>1.9.7</aspectj.version>
     </properties>
+    <repositories>
+        <repository>
+            <id>sikulix-atid-college</id>
+            <name>Sikulix Repo ATID</name>
+            <url>https://atidcollege.co.il/downloads/libs</url>
+        </repository>
+    </repositories>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.4.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>3.3.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -66,13 +67,26 @@
             <version>5.0.3</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>sikulix</groupId>
+            <artifactId>sikulix-api</artifactId>
+            <version>2.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.stephenc.monte</groupId>
+            <artifactId>monte-screen-recorder</artifactId>
+            <version>0.7.7.0</version>
+        </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.7</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.28</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
         <dependency>
@@ -97,10 +111,14 @@
             <version>3.3.0</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.6.0</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
-
 
     <build>
         <plugins>
