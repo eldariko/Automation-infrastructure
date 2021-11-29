@@ -17,6 +17,7 @@ import org.testng.asserts.SoftAssert;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class Base {
     protected static WebDriverWait wait;
@@ -31,6 +32,8 @@ public class Base {
     protected static String dbURL;
     protected static String dbUserName;
     protected static String dbPassword;
+    protected static Properties p;
+
 
     //WEB
 

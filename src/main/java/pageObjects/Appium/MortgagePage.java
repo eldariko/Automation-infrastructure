@@ -51,11 +51,11 @@ public class MortgagePage {
     }
 
     @AndroidFindBy(id = "tvRepayment")
-    public AndroidElement txt_repayment;
+    public AndroidElement textViewRepayment;
 
     @Step("Get Repayment element")
     public AndroidElement getTxt_repayment() {
-        return txt_repayment;
+        return textViewRepayment;
     }
 
 }
