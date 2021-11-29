@@ -12,7 +12,7 @@ public class AppiumActions extends WebActions {
     public static void updateText(MobileElement elem, String text) {
         wait.until((ExpectedConditions.visibilityOf(elem)));
         elem.clear();
-        elem.sendKeys(text);
+        elem.setValue(text);
     }
 
     //    @Step("Double Tap on Element")
@@ -23,7 +23,7 @@ public class AppiumActions extends WebActions {
     @Step("Single Tap on Element")
     public static void singleTap(MobileElement elem) {
         wait.until(ExpectedConditions.elementToBeClickable(elem));
-        touchAction.press(new ElementOption().withElement(elem)).perform();
+        touchAction.tap(new ElementOption().withElement(elem)).perform();
     }
 
     @Step("Long press on Element")
