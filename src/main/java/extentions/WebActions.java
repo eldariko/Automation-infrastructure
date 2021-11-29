@@ -10,8 +10,8 @@ import java.util.List;
 public class WebActions extends CommonOps {
 
     @Step("Get elements list size ")
-    public static void getSize(List<WebElement> elementsList){
-        elementsList.size();
+    public static int getSize(List<WebElement> elementsList){
+        return elementsList.size();
     }
     @Step("Click on an element ")
     public static void clickOnElement(WebElement element){

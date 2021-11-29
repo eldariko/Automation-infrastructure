@@ -48,9 +48,21 @@ public class webFlows extends CommonOps {
     }
     @Step
     public static void deleteUserByLocation(int index)throws Exception{
-        WebActions.clickOnElement(serverAdminPage.getTxt_tableBody().get(index).findElement(By.xpath("//td")));
+        WebActions.clickOnElement(serverAdminPage.getRowByIndex(index));
         Thread.sleep(500);
         WebActions.clickOnElement(serverAdminPage.getBtn_deleteUser());
         WebActions.clickOnElement(serverAdminPage.getBtn_confirmDeleteUser());
+    }
+    @Step
+    public static void enterToPluginsPage(){
+        action=new Actions(driver);
+        action.moveToElement(homePage.getBtn_serverAdmin()).build().perform();
+        WebActions.clickOnElement(homePage.getBtn_plugins());
+    }
+    @Step
+    public static int getPluginsNumber()throws Exception{
+        WebActions.clickOnElement(serverAdminPage.getBtn_viewAllPlugins());
+        Thread.sleep(3000);
+        return WebActions.getSize(serverAdminPage.getBtn_allPlugins());
     }
 }

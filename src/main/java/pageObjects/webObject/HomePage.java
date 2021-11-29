@@ -9,6 +9,8 @@ public class HomePage {
     private WebElement btn_serverAdmin;
     @FindBy(xpath = "//*[@id='reactRoot']/div/nav/div[2]/div[7]/ul/li[2]/a")
     private WebElement btn_users;
+    @FindBy(xpath = "//*[@id='reactRoot']/div/nav/div[2]/div[7]/ul/li[5]/a")
+    private WebElement btn_plugins;
 
 
     @Step
@@ -18,5 +20,9 @@ public class HomePage {
     @Step
     public WebElement getBtn_users(){
         return btn_users;
+    }
+    @Step
+    public WebElement getBtn_plugins(){
+        return btn_plugins;
     }
 }

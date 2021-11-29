@@ -1,3 +1,5 @@
+import extentions.VerificationActions;
+import extentions.WebActions;
 import org.sikuli.script.FindFailed;
 import org.testng.annotations.Test;
 import utilities.CommonOps;
@@ -22,5 +24,12 @@ public class webTests extends CommonOps {
     public void deleteUser() throws Exception {
         enterToUsersPage();
         deleteUserByLocation(2);
+    }
+    @Test(dependsOnMethods = "loginToGrafana")
+    public void checkNumberOfInstalledPlugins() throws Exception{
+        int pluginsCount;
+        enterToPluginsPage();
+        pluginsCount=getPluginsNumber();
+        VerificationActions.assertEquals(pluginsCount,212);
     }
 }
