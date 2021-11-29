@@ -1,14 +1,20 @@
 package utilities;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MultiTouchAction;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -70,7 +76,6 @@ public class CommonOps extends Base {
         }
     }
 
-    // Re-navigate to Grafana URL after each test
     @AfterMethod
     public void afterMethod() throws Exception {
         if (platform.equalsIgnoreCase("web"))
@@ -89,9 +94,11 @@ public class CommonOps extends Base {
 
 
         try {
-            mobileDriver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
+            mobileDriver = new AppiumDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
             mobileDriver.setLogLevel(Level.INFO);
             mobileDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            wait = new WebDriverWait(mobileDriver, 10);
+            touchAction = new TouchAction(mobileDriver);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
