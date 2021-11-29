@@ -1,6 +1,7 @@
 package utilities;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.MultiTouchAction;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -89,12 +90,12 @@ public class CommonOps extends Base {
         dc.setCapability("reportFormat", reportFormat);
         dc.setCapability("testName", testName);
         dc.setCapability(MobileCapabilityType.UDID, "359451150604");
-        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "kr.sira.unit");
-        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".Intro");
+        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.shivgadhia.android.ukMortgageCalc");
+        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".MainActivity");
 
 
         try {
-            mobileDriver = new AppiumDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
+            mobileDriver = new AppiumDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), dc);
             mobileDriver.setLogLevel(Level.INFO);
             mobileDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             wait = new WebDriverWait(mobileDriver, 10);
