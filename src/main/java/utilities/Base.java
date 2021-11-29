@@ -23,10 +23,10 @@ public class Base {
     protected static Actions action;
     protected static SoftAssert softAssert;
     protected static String platform;
-    protected static String browserName;
+    protected static String browser;
     protected static String timeout;
     protected static String url;
-    protected static String ddtFile;
+    protected static String csvFile;
     protected static String activeDB;
     protected static String dbURL;
     protected static String dbUserName;

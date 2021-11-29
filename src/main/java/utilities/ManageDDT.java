@@ -15,7 +15,7 @@ public class ManageDDT extends CommonOps {
     @DataProvider(name = "data-provider")
     @Description("DataProvider: Get Object 'table' from CSV file")
     public static Object[][] getDataObject() {
-        return getDataFromCSV(ddtFile);
+        return getDataFromCSV(csvFile);
     }
 
     @Description("Convert CSV into Object 'table'")

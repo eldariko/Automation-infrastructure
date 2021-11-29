@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -29,9 +30,9 @@ import java.util.logging.Level;
 public class CommonOps extends Base {
 
     @BeforeClass
-    public void setUp() {
-        platform = "mobile";
-
+    @Parameters({"Platform", "Browser", "URL", "Timeout", "csvFile", "ActiveDB", "DBURL", "DBUsername", "DBPassword"})
+    public void setUp(String platform, String browser, String URL, String Timeout, String DDTFile, String ActiveDB, String DBURL, String DBUsername, String DBPassword) {
+        this.initParameters(platform, browser, URL, Timeout, DDTFile, ActiveDB, DBURL, DBUsername, DBPassword);
         switch (platform) {
             case "web":
                 initWeb();
@@ -124,5 +125,11 @@ public class CommonOps extends Base {
     public static WebDriver initIEDriver() {
         WebDriverManager.iedriver().setup();
         return new InternetExplorerDriver();
+    }
+
+    private static void initParameters(String platform, String browser, String URL, String Timeout, String DDTFile, String ActiveDB, String DBURL, String DBUsername, String DBPassword) {
+        Base.platform = platform;
+        Base.browser = browser;
+        Base.url = URL;
     }
 }
