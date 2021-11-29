@@ -104,7 +104,7 @@ public class CommonOps extends Base {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        ManagePages.initUnitConvertor();
+        ManagePages.initMortgagePage();
 
 
     }
@@ -131,5 +131,6 @@ public class CommonOps extends Base {
         Base.platform = platform;
         Base.browser = browser;
         Base.url = URL;
+        Base.csvFile = DDTFile;
     }
 }

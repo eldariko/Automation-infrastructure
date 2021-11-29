@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utilities.CommonOps;
+import utilities.ManageDDT;
 import workflows.AppiumWorkflow;
 
 import java.time.Duration;
@@ -18,11 +19,10 @@ import java.time.Duration;
 @Listeners(utilities.Listener.class)
 public class AppiumTests extends CommonOps {
 
-    @Test(description = "Test01 - Mortgage Calculation")
-    @Description("Test01 - Mortgage Calculation")
-    public void test_01() {
-        AppiumWorkflow.calculateMortgage("500", "5", "10");
-        VerificationActions.assertEquals(mortgagePage.getTxt_repayment().getText(), "£30.03");
+    @Test(description = "Test01 - Mortgage Calculation", dataProviderClass = ManageDDT.class)
+    public void test_01(String amount, String term, String rate, String expected) {
+        AppiumWorkflow.calculateMortgage(amount, term, rate);
+        VerificationActions.assertEquals(mortgagePage.getTxt_repayment().getText(), expected);
     }
 
 
