@@ -2,6 +2,8 @@ package utilities;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileDriver;
+import io.appium.java_client.MultiTouchAction;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.restassured.path.json.JsonPath;
@@ -10,6 +12,7 @@ import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
@@ -50,7 +53,9 @@ public class Base {
 
 
     ///////////Android/////////
-    public static AppiumDriver mobileDriver;
+    public static AppiumDriver<?> mobileDriver;
+    protected static MultiTouchAction touchActions;
+    protected static TouchAction touchAction;
     protected DesiredCapabilities dc;
     protected static String reportDirectory = "reports";
     protected static String reportFormat = "xml";
