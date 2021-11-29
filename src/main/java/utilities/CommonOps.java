@@ -33,6 +33,8 @@ public class CommonOps extends Base {
     @Parameters({"Platform", "Browser", "URL", "Timeout", "csvFile", "ActiveDB", "DBURL", "DBUsername", "DBPassword"})
     public void setUp(String platform, String browser, String URL, String Timeout, String DDTFile, String ActiveDB, String DBURL, String DBUsername, String DBPassword) {
         this.initParameters(platform, browser, URL, Timeout, DDTFile, ActiveDB, DBURL, DBUsername, DBPassword);
+        ConvertXmlToProperties.initPropertyFile();
+        p = ConvertXmlToProperties.getProps();
         switch (platform) {
             case "web":
                 initWeb();
@@ -90,13 +92,13 @@ public class CommonOps extends Base {
         dc.setCapability("reportDirectory", reportDirectory);
         dc.setCapability("reportFormat", reportFormat);
         dc.setCapability("testName", testName);
-        dc.setCapability(MobileCapabilityType.UDID, "359451150604");
-        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.shivgadhia.android.ukMortgageCalc");
-        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".MainActivity");
+        dc.setCapability(MobileCapabilityType.UDID, p.getProperty("UDID"));
+        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, p.getProperty("APP_PACKAGE"));
+        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, p.getProperty("APP_ACTIVITY"));
 
 
         try {
-            mobileDriver = new AppiumDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), dc);
+            mobileDriver = new AppiumDriver<MobileElement>(new URL(p.getProperty("url.mobile_url")), dc);
             mobileDriver.setLogLevel(Level.INFO);
             mobileDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             wait = new WebDriverWait(mobileDriver, 10);
