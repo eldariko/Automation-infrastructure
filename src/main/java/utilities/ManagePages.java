@@ -1,9 +1,7 @@
 package utilities;
 
-<<<<<<< Updated upstream
-public class ManagePages extends Base {
-=======
 import org.openqa.selenium.support.PageFactory;
+import pageObjects.webObject.HomePage;
 import pageObjects.webObject.LoginPage;
 
 public class ManagePages extends Base {
@@ -15,6 +13,6 @@ public class ManagePages extends Base {
     //Web
     public static void initWebPages(){
         loginPage=PageFactory.initElements(driver,LoginPage.class);
+        homePage=PageFactory.initElements(driver, HomePage.class);
     }
->>>>>>> Stashed changes
 }

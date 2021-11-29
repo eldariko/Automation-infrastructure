@@ -1,27 +1,30 @@
 package utilities;
 
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Step;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-<<<<<<< Updated upstream
-=======
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
->>>>>>> Stashed changes
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 import static utilities.ManagePages.initWebPages;
 
 public class CommonOps extends Base {
+
     @BeforeClass
-<<<<<<< Updated upstream
-    public void startSessions(){
-        initChromeDriver();
-    }
-=======
     public void setUp() {
         platform = "web";
 
@@ -45,21 +48,22 @@ public class CommonOps extends Base {
 
 
     //Close session
-//    @AfterClass
-//    public void closeSession() {
-//        activeDB="no";
-//        if (activeDB.equalsIgnoreCase("yes")) {
-//            JDBC.closeConnection();
-//        }
-//        if (!platform.equalsIgnoreCase("api")) {
-//            if (!platform.equalsIgnoreCase("mobile"))
-//                driver.quit();
-//            else
-//                mobileDriver.quit();
-//        }
-//    }
+    @AfterClass
+    public void closeSession() {
+        activeDB="no";
+        if (activeDB.equalsIgnoreCase("yes")) {
+            //JDBC.closeConnection();
+        }
+        if (!platform.equalsIgnoreCase("api")) {
+            if (!platform.equalsIgnoreCase("mobile"))
+                driver.quit();
+            else
+                mobileDriver.quit();
+        }
+    }
 
 //     //Start video recording before starting a test
+//
 //    @BeforeMethod
 //    public void beforeMethod(Method method) {
 //        if (!platform.equalsIgnoreCase("api")) {
@@ -78,25 +82,16 @@ public class CommonOps extends Base {
 //            driver.get(url);
 //        MonteScreenRecorder.stopRecord();
 //    }
->>>>>>> Stashed changes
 
+    public void initMobile() {
+        dc = new DesiredCapabilities();
+        dc.setCapability("reportDirectory", reportDirectory);
+        dc.setCapability("reportFormat", reportFormat);
+        dc.setCapability("testName", testName);
+        dc.setCapability(MobileCapabilityType.UDID, "359451150604");
+        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "kr.sira.unit");
+        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".Intro");
 
-<<<<<<< Updated upstream
-    @Step
-    public static void initChromeDriver(){
-        WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
-    }
-    @Step
-    public static void initFireFoxDriver(){
-        WebDriverManager.firefoxdriver().setup();
-        driver=new FirefoxDriver();
-    }
-    @Step
-    public static void initIeDriver(){
-        WebDriverManager.iedriver().setup();
-        driver=new InternetExplorerDriver();
-=======
         try {
             mobileDriver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
             mobileDriver.setLogLevel(Level.INFO);
@@ -141,6 +136,5 @@ public class CommonOps extends Base {
         WebDriverManager.iedriver().setup();
         driver=new InternetExplorerDriver();
         driver.get("http://localhost:3000");
->>>>>>> Stashed changes
     }
 }

@@ -1,19 +1,10 @@
 package pageObjects.webObject;
 
-<<<<<<< Updated upstream
-=======
 import io.qameta.allure.Step;
->>>>>>> Stashed changes
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage {
-<<<<<<< Updated upstream
-    @FindBy(xpath = "//div/input")
-    public static WebElement txt_userName;
-    @FindBy(xpath = "//div[@class='css-1w5c5dq-input-inputWrapper']/input[@id='current-password']")
-    public static WebElement txt_password;
-=======
 
     @FindBy(xpath = "//div/input")
     private WebElement txt_userName;
@@ -34,5 +25,4 @@ public class LoginPage {
     public WebElement getBtn_skip(){
         return btn_skip;
     }
->>>>>>> Stashed changes
 }

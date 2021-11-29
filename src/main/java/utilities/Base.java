@@ -1,21 +1,11 @@
 package utilities;
 
-import org.sikuli.script.Screen;
+import io.appium.java_client.AppiumDriver;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
-<<<<<<< Updated upstream
-import org.sikuli.script.Pattern;
-
-public class Base {
-    public static WebDriver driver;
-    public static Screen screen;
-    public static Pattern login_btn;
-    public RequestSpecification httpRequest;
-    public Response response;
-    public JsonPath jsonPath;
-=======
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -73,5 +63,5 @@ public class Base {
 
     //page object web
     public static pageObjects.webObject.LoginPage loginPage;
->>>>>>> Stashed changes
+    public static pageObjects.webObject.HomePage homePage;
 }
