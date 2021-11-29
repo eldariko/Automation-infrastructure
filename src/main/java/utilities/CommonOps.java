@@ -47,20 +47,20 @@ public class CommonOps extends Base {
     }
 
 
-    //Close session
-    @AfterClass
-    public void closeSession() {
-        activeDB="no";
-        if (activeDB.equalsIgnoreCase("yes")) {
-            //JDBC.closeConnection();
-        }
-        if (!platform.equalsIgnoreCase("api")) {
-            if (!platform.equalsIgnoreCase("mobile"))
-                driver.quit();
-            else
-                mobileDriver.quit();
-        }
-    }
+//    //Close session
+//    @AfterClass
+//    public void closeSession() {
+//        activeDB="no";
+//        if (activeDB.equalsIgnoreCase("yes")) {
+//            //JDBC.closeConnection();
+//        }
+//        if (!platform.equalsIgnoreCase("api")) {
+//            if (!platform.equalsIgnoreCase("mobile"))
+//                driver.quit();
+//            else
+//                mobileDriver.quit();
+//        }
+//    }
 
 //     //Start video recording before starting a test
 //

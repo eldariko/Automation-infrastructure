@@ -2,6 +2,8 @@ package workflows;
 
 import extentions.WebActions;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Pattern;
@@ -29,11 +31,26 @@ public class webFlows extends CommonOps {
     public static void enterToUsersPage(){
         action=new Actions(driver);
         action.moveToElement(homePage.getBtn_serverAdmin()).build().perform();
-        homePage.getBtn_users().click();
+        WebActions.clickOnElement(homePage.getBtn_users());
     }
     @Step
     public static void clickAddNewUser(){
-
+        WebActions.clickOnElement(serverAdminPage.getBtn_createNewUser());
+        serverAdminPage.getBtn_createNewUser();
     }
-
+    @Step
+    public static void addUser(String name,String email,String username,String password){
+        WebActions.enterKey(serverAdminPage.getTxt_name(),name);
+        WebActions.enterKey(serverAdminPage.getTxt_email(), email);
+        WebActions.enterKey(serverAdminPage.getTxt_username(), username);
+        WebActions.enterKey(serverAdminPage.getTxt_password(), password);
+        WebActions.clickOnElement(serverAdminPage.getBtn_register());
+    }
+    @Step
+    public static void deleteUserByLocation(int index)throws Exception{
+        WebActions.clickOnElement(serverAdminPage.getTxt_tableBody().get(index).findElement(By.xpath("//td")));
+        Thread.sleep(500);
+        WebActions.clickOnElement(serverAdminPage.getBtn_deleteUser());
+        WebActions.clickOnElement(serverAdminPage.getBtn_confirmDeleteUser());
+    }
 }

@@ -64,4 +64,5 @@ public class Base {
     //page object web
     public static pageObjects.webObject.LoginPage loginPage;
     public static pageObjects.webObject.HomePage homePage;
+    public static pageObjects.webObject.ServerAdminPage serverAdminPage;
 }
