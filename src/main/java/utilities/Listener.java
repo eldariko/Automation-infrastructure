@@ -18,10 +18,19 @@ public class Listener extends CommonOps implements ITestListener {
     }
 
     public void onTestSuccess(ITestResult test) {
-        // TODO Auto-generated method stub
+        try {
+            MonteScreenRecorder.stopRecord();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void onTestFailure(ITestResult test) {
+        try {
+            MonteScreenRecorder.stopRecord();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         System.out.println("test failed");
     }
 

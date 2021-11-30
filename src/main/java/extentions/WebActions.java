@@ -2,6 +2,7 @@ package extentions;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import utilities.CommonOps;
 
@@ -10,15 +11,18 @@ import java.util.List;
 public class WebActions extends CommonOps {
 
     @Step("Get elements list size ")
-    public static void getSize(List<WebElement> elementsList){
-        elementsList.size();
+    public static int getSize(List<WebElement> elementsList) {
+        return elementsList.size();
     }
+
     @Step("Click on an element ")
-    public static void clickOnElement(WebElement element){
+    public static void clickOnElement(WebElement element) {
+        wait.until((ExpectedConditions.visibilityOf(element)));
         element.click();
     }
     @Step("Enter key")
     public static void enterKey(WebElement element,String key){
+        wait.until((ExpectedConditions.visibilityOf(element)));
         element.clear();
         element.sendKeys(key);
     }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Api Suite" parallel="false">
+
+
+    <!--        Need to connect to Grafana Server        -->
+    <test name="Api Test">
+        <parameter name="Platform" value="api"/>
+        <parameter name="Browser" value=""/>
+        <parameter name="URL" value="http://admin:admin@localhost:3000/api/admin"/>
+        <parameter name="Timeout" value="10"/>
+        <parameter name="csvFile" value=""/>
+        <parameter name="ActiveDB" value="no"/>
+        <parameter name="DBURL" value=""/>
+        <parameter name="DBUsername" value=""/>
+        <parameter name="DBPassword" value=""/>
+        <classes>
+            <class name="APITests">
+                <methods>
+                    <include name="test01_GetStatus"/>
+                    <include name="test02_GetSettings"/>
+                    <include name="test03_Post_NewUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->
