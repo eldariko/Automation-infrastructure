@@ -9,40 +9,53 @@ import utilities.CommonOps;
 public class DesktopWorkflows extends CommonOps {
 
     @Step("Add")
-    public static void Add(WebElement element1, WebElement element2) {
+    public static void Add(WebElement element1, WebElement element2, String expectedResult) {
         DesktopAction.click(element1);
-        DesktopAction.click(CalculatePage.button_plus);
+        DesktopAction.click(calculatePage.getButton_plus());
         DesktopAction.click(element2);
-        DesktopAction.click(CalculatePage.button_equals);
+        DesktopAction.click(calculatePage.getButton_equals());
+        String s = GetNumberFromString(calculatePage.getResult().getText());
+        softAssert.assertEquals(s, expectedResult);
     }
 
     @Step("Minus")
-    public static void Minus(WebElement element1, WebElement element2) {
+    public static void Minus(WebElement element1, WebElement element2, String expectedResult) {
         DesktopAction.click(element1);
-        DesktopAction.click(CalculatePage.button_minus);
+        DesktopAction.click(calculatePage.getButton_minus());
         DesktopAction.click(element2);
-        DesktopAction.click(CalculatePage.button_equals);
+        DesktopAction.click(calculatePage.getButton_equals());
+        String s = GetNumberFromString(calculatePage.getResult().getText());
+        softAssert.assertEquals(s, expectedResult);
     }
 
     @Step("Mult")
-    public static void Mult(WebElement element1, WebElement element2) {
+    public static void Mult(WebElement element1, WebElement element2, String expectedResult) {
         DesktopAction.click(element1);
-        DesktopAction.click(CalculatePage.button_mult);
+        DesktopAction.click(calculatePage.getButton_mult());
         DesktopAction.click(element2);
-        DesktopAction.click(CalculatePage.button_equals);
+        DesktopAction.click(calculatePage.getButton_equals());
+        String s = GetNumberFromString(calculatePage.getResult().getText());
+        softAssert.assertEquals(s, expectedResult);
+
+
     }
 
     @Step("Divide")
-    public static void Divide(WebElement element1, WebElement element2) {
+    public static void Divide(WebElement element1, WebElement element2, String expectedResult) {
         DesktopAction.click(element1);
-        DesktopAction.click(CalculatePage.button_divide);
+        DesktopAction.click(calculatePage.getButton_divide());
         DesktopAction.click(element2);
-        DesktopAction.click(CalculatePage.button_equals);
+        DesktopAction.click(calculatePage.getButton_equals());
+        String s = GetNumberFromString(calculatePage.getResult().getText());
+        softAssert.assertEquals(s, expectedResult);
+
     }
 
-    @Step("Assert")
-    public static void AssertResult(int x, int y) {
-        DesktopAction.AssertEquals(x, y);
+    @Step("SubString")
+    public static String GetNumberFromString(String s) {
+        s = s.substring(s.lastIndexOf(' ') + 1);
+        System.out.println(s);
+        return s;
     }
 
 

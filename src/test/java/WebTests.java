@@ -31,6 +31,6 @@ public class WebTests extends CommonOps {
         int pluginsCount;
         enterToPluginsPage();
         pluginsCount = getPluginsNumber();
-        VerificationActions.assertEquals(pluginsCount, 212);
+        VerificationActions.assertEquals(pluginsCount, 213);
     }
 }
