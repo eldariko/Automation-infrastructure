@@ -12,6 +12,8 @@ public class HomePage {
     @FindBy(xpath = "//*[@id='reactRoot']/div/nav/div[2]/div[7]/ul/li[5]/a")
     private WebElement btn_plugins;
 
+    @FindBy(className = "css-1aanzv4")
+    private WebElement welcome_h1;
 
     @Step
     public WebElement getBtn_serverAdmin() {
@@ -26,5 +28,10 @@ public class HomePage {
     @Step
     public WebElement getBtn_plugins() {
         return btn_plugins;
+    }
+
+    @Step
+    public WebElement getWelcome_h1() {
+        return welcome_h1;
     }
 }

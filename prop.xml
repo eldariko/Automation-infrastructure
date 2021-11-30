@@ -10,6 +10,7 @@
     <entry key="UDID">359451150604</entry>
     <entry key="APP_PACKAGE">com.shivgadhia.android.ukMortgageCalc</entry>
     <entry key="APP_ACTIVITY">.MainActivity</entry>
-
+    <entry key="APP_ID">Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</entry>
+    <entry key="ElectronAppPath">C:\\Users\\bizyb\\AppData\\Local\\Programs\\todolist\\Todolist.exe</entry>
 
 </properties>
