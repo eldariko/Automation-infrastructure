@@ -1,18 +1,20 @@
 package utilities;
 
 import io.appium.java_client.*;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.windows.WindowsDriver;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Screen;
 import org.testng.asserts.SoftAssert;
+import pageObjects.Appium.MortgagePage;
+import pageObjects.Desktop.CalculatePage;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -38,12 +40,8 @@ public class Base {
     //WEB
 
     public static WebDriver driver;
-
-    //API
-    public RequestSpecification httpRequest;
-    public Response response;
-    public JsonPath jsonPath;
-    protected static JSONObject params = new JSONObject();
+    public static Screen screen;
+    public static Pattern login_btn;
 
 
     // Database
@@ -62,5 +60,26 @@ public class Base {
     protected static String testName = "Untitled";
 
     // Page Objects - Mobile
-    protected static pageObjects.Appium.MortgagePage mortgagePage;
+    protected static MortgagePage mortgagePage;
+
+    //page object web
+    public static pageObjects.webObject.LoginPage loginPage;
+    public static pageObjects.webObject.HomePage homePage;
+    public static pageObjects.webObject.ServerAdminPage serverAdminPage;
+
+
+    //API
+    protected static String restUrl;
+    protected static RequestSpecification request;
+    protected static Response response;
+    protected static JsonPath jp;
+    protected static JSONObject params;
+
+    //Desktop
+    protected static DesiredCapabilities capabilities;
+    protected static WindowsDriver Windowsdriver;
+    protected static String calcApp = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
+
+    protected static CalculatePage calculatePage;
+    protected static int result;
 }
