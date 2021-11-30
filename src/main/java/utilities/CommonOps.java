@@ -2,9 +2,7 @@ package utilities;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.MultiTouchAction;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.windows.WindowsDriver;
@@ -12,28 +10,25 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import pageObjects.Desktop.CalculatePage;
 
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-import static utilities.ManagePages.initWebPages;
+import static utilities.ManagePages.*;
 
 public class CommonOps extends Base {
 
@@ -54,6 +49,7 @@ public class CommonOps extends Base {
                 initApi();
                 break;
             case "electron":
+                initElectron();
                 break;
             case "desktop":
                 initDesktop();
@@ -132,6 +128,8 @@ public class CommonOps extends Base {
             default:
                 throw new RuntimeException("Invalid driverType name");
         }
+        if (activeDB.equals("yes"))
+            JDBC.openConnection();
     }
 
     public static void initChromeDriver() {
@@ -171,15 +169,24 @@ public class CommonOps extends Base {
     @Step
     public static void initDesktop() {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("app", calcApp);
+        capabilities.setCapability("app", p.getProperty("APP_ID"));
         try {
-            Windowsdriver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
-            Windowsdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-            calculatePage = PageFactory.initElements(Windowsdriver, CalculatePage.class);
+            windowsDriver = new WindowsDriver(new URL(url), capabilities);
+            setWaitTimeOut(windowsDriver);
+            initDesktopPages();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
+    }
+
+    public static void initElectron() {
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\electrondriver.exe");
+        ChromeOptions opt = new ChromeOptions();
+        opt.setBinary(p.getProperty("ElectronAppPath"));
+        driver = new ChromeDriver(opt);
+        setWaitTimeOut(driver);
+        initElectronPage();
     }
 
     private static void initParameters(String platform, String browser, String URL, String Timeout, String DDTFile, String ActiveDB, String DBURL, String DBUsername, String DBPassword) {
@@ -188,9 +195,15 @@ public class CommonOps extends Base {
         Base.url = URL;
         Base.csvFile = DDTFile;
         Base.timeout = Timeout;
+        Base.activeDB = ActiveDB;
+        Base.dbURL = DBURL;
+        Base.dbUserName = DBUsername;
+        Base.dbPassword = DBPassword;
+
     }
 
     private static void setWaitTimeOut(WebDriver driver) {
+        driver.manage().timeouts().implicitlyWait(Long.parseLong(timeout), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Integer.parseInt(timeout));
 
     }

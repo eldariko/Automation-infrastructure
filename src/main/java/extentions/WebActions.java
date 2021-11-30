@@ -20,6 +20,7 @@ public class WebActions extends CommonOps {
         wait.until((ExpectedConditions.visibilityOf(element)));
         element.click();
     }
+
     @Step("Enter key")
     public static void enterKey(WebElement element,String key){
         wait.until((ExpectedConditions.visibilityOf(element)));
@@ -34,16 +35,19 @@ public class WebActions extends CommonOps {
     public static void elementIsEnabled(WebElement element){
         element.isEnabled();
     }
+
     @Step("Element is selected")
-    public static void elementIsSelected(WebElement element){
+    public static void elementIsSelected(WebElement element) {
         element.isSelected();
     }
+
     @Step("Get element text")
-    public static void getElementText(WebElement element){
-        element.getText();
+    public static String getElementText(WebElement element) {
+        return element.getText();
     }
+
     @Step("Assert true")
-    public static void assertTrue(boolean flag){
+    public static void assertTrue(boolean flag) {
         Assert.assertTrue(flag);
     }
     @Step("Assert if numbers are equals")

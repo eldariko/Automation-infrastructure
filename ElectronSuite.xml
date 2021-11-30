@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Electron Suite" parallel="false">
+
+
+    <test name="Electron Test">
+        <parameter name="Platform" value="electron"/>
+        <parameter name="Browser" value=""/>
+        <parameter name="URL" value=""/>
+        <parameter name="Timeout" value="10"/>
+        <parameter name="csvFile" value=""/>
+        <parameter name="ActiveDB" value="no"/>
+        <parameter name="DBURL" value=""/>
+        <parameter name="DBUsername" value=""/>
+        <parameter name="DBPassword" value=""/>
+        <classes>
+            <class name="ElectronTests">
+                <methods>
+                    <include name="addTodoTask"/>
+                    <include name="deleteTaskByLocation"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->

@@ -7,6 +7,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -43,6 +44,8 @@ public class Base {
     public static Screen screen;
     public static Pattern login_btn;
 
+    //Electron
+    public static ChromeOptions opt;
 
     // Database
     protected static Connection con;
@@ -67,6 +70,8 @@ public class Base {
     public static pageObjects.webObject.HomePage homePage;
     public static pageObjects.webObject.ServerAdminPage serverAdminPage;
 
+    //page object Electron
+    public static pageObjects.Electron.TodoPage todoPage;
 
     //API
     protected static String restUrl;
@@ -77,8 +82,8 @@ public class Base {
 
     //Desktop
     protected static DesiredCapabilities capabilities;
-    protected static WindowsDriver Windowsdriver;
-    protected static String calcApp = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
+    protected static WindowsDriver windowsDriver;
+    protected static String calcApp;
 
     protected static CalculatePage calculatePage;
     protected static int result;

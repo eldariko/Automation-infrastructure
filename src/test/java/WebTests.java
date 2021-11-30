@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import utilities.CommonOps;
 import utilities.ManageDDT;
 
-import static workflows.webFlows.*;
+import static workflows.WebFlows.*;
 
 public class WebTests extends CommonOps {
     @Test(description = "Web Test - loginToGrafana", dataProvider = "data-provider", dataProviderClass = ManageDDT.class)
