@@ -18,7 +18,6 @@
                 <methods>
                     <include name="addTodoTask"/>
                     <include name="deleteTaskByLocation"/>
-
                 </methods>
             </class>
         </classes>

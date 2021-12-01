@@ -19,10 +19,7 @@
         <classes>
             <class name="WebTests">
                 <methods>
-                    <include name="loginToGrafana"/>
-                    <include name="addNewUser"/>
-                    <include name="deleteUser"/>
-                    <include name="checkNumberOfAllPlugins"/>
+
                 </methods>
             </class>
         </classes>

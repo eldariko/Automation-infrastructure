@@ -128,8 +128,10 @@ public class CommonOps extends Base {
             default:
                 throw new RuntimeException("Invalid driverType name");
         }
-        if (activeDB.equals("yes"))
-            JDBC.openConnection();
+        if (activeDB.equals("yes")) {
+            JDBC.createDatabaseExample();
+
+        }
     }
 
     public static void initChromeDriver() {
