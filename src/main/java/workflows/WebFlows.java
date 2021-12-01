@@ -4,6 +4,7 @@ import extentions.DBActions;
 import extentions.WebActions;
 import io.qameta.allure.Step;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
@@ -78,7 +79,7 @@ public class WebFlows extends CommonOps {
     @Step
     public static void enterToPluginsPage() {
         action = new Actions(driver);
-
+        wait.until(ExpectedConditions.visibilityOf(homePage.getBtn_serverAdmin()));
         action.moveToElement(homePage.getBtn_serverAdmin()).build().perform();
         WebActions.clickOnElement(homePage.getBtn_plugins());
     }

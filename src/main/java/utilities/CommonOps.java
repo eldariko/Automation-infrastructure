@@ -3,6 +3,7 @@ package utilities;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.windows.WindowsDriver;
@@ -98,8 +99,10 @@ public class CommonOps extends Base {
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, p.getProperty("APP_ACTIVITY"));
 
 
+
         try {
-            mobileDriver = new AppiumDriver<MobileElement>(new URL(p.getProperty("url.mobile_url")), dc);
+
+            mobileDriver = new AppiumDriver<>(new URL(url), dc);
             mobileDriver.setLogLevel(Level.INFO);
             setWaitTimeOut(mobileDriver);
         } catch (MalformedURLException e) {

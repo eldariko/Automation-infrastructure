@@ -7,7 +7,7 @@
 
     <!--MOBILE-->
     <entry key="url.mobile_url">http://localhost:4723/wd/hub</entry>
-    <entry key="UDID">359451150604</entry>
+    <entry key="UDID">3f8868510504</entry>
     <entry key="APP_PACKAGE">com.shivgadhia.android.ukMortgageCalc</entry>
     <entry key="APP_ACTIVITY">.MainActivity</entry>
     <entry key="APP_ID">Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</entry>
