@@ -3,9 +3,9 @@
 
 ## About
 
-Automation infrastructure with a TestNG framework and a Page-Object-Model for testing applications on multiple platforms. The infrastructure provides an easy, simple and quick way to add new tests, and is easily expandable & maintained.
+Automation infrastructure with a TestNG framework and a Page-Object-Model design pattern for testing applications on multiple platforms.
 
-Jenkins is used to schedule executions of the Test Suites profiles for each platform  linked into a pipeline.
+Jenkins is used to schedule executions of the Test Suites profiles for each platform.
 
 Allure Report system is used as the main reporting system.
 
