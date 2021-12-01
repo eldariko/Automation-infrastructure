@@ -8,7 +8,7 @@ import workflows.WebFlows;
 
 public class Web_DB_Tests extends CommonOps {
     @Test(description = "Test01 - Login to Grafana with DB Credentials")
-    @Description("This Test login with DB credentials and verifies the main header")
+    @Description("verifies main title")
     public void test01_loginDB() {
         WebFlows.loginWithDB();
         WebFlows.skipChangePassword();

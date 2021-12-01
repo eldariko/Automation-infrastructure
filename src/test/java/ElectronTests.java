@@ -11,7 +11,9 @@ public class ElectronTests extends CommonOps {
     }
 
     @Test
-    public void deleteTaskByLocation() {
+    public void deleteTaskByLocation() throws InterruptedException {
+        Thread.sleep(2000);
         deleteTask(1);
+        Thread.sleep(2000);
     }
 }

@@ -20,9 +20,9 @@
             <class name="DesktopTests">
                 <methods>
                     <include name="test01_Plus"/>
-                    <include name="test02_Minus"/>
-                    <include name="test03_Multiply"/>
-                    <include name="test04_Divide"/>
+                    <!--                    <include name="test02_Minus"/>-->
+                    <!--                    <include name="test03_Multiply"/>-->
+                    <!--                    <include name="test04_Divide"/>-->
                 </methods>
             </class>
         </classes>

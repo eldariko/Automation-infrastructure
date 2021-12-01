@@ -13,20 +13,20 @@ public class WebTests extends CommonOps {
         skipChangePassword();
     }
 
-    @Test(dependsOnMethods = "loginToGrafana")
+    @Test(dependsOnMethods = "loginToGrafana", priority = 1)
     public void addNewUser() {
         enterToUsersPage();
         clickAddNewUser();
         addUser("yonatan", "yoni@gmail.com", "yoni", "123456");
     }
 
-    @Test(dependsOnMethods = "loginToGrafana")
+    @Test(dependsOnMethods = "loginToGrafana", priority = 2)
     public void deleteUser() throws Exception {
         enterToUsersPage();
         deleteUserByLocation(2);
     }
 
-    @Test(dependsOnMethods = "loginToGrafana")
+    @Test(dependsOnMethods = "loginToGrafana", priority = 3)
     public void checkNumberOfAllPlugins() throws Exception {
         int pluginsCount;
         enterToPluginsPage();

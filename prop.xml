@@ -13,5 +13,6 @@
     <entry key="APP_ID">Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</entry>
     <entry key="ElectronAppPath">C:\\Users\\bizyb\\AppData\\Local\\Programs\\todolist\\Todolist.exe</entry>
     <entry key="ElectronAppDriverPath">src\main\resources\drivers\electrondriver.exe</entry>
+    <entry key="TableName">user</entry>
 
 </properties>
