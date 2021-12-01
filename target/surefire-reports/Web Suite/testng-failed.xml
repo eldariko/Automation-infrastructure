@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Web Suite]">
+  <listeners>
+    <listener class-name="utilities.Listener"/>
+  </listeners>
+  <test thread-count="5" verbose="0" name="Web Test(failed)">
+    <parameter name="ActiveDB" value="no"/>
+    <parameter name="DBPassword" value=""/>
+    <parameter name="Platform" value="web"/>
+    <parameter name="csvFile" value="./DDTFiles/web.csv"/>
+    <parameter name="Timeout" value="10"/>
+    <parameter name="DBURL" value=""/>
+    <parameter name="URL" value="http://localhost:3000"/>
+    <parameter name="DBUsername" value=""/>
+    <parameter name="Browser" value="chrome"/>
+    <classes>
+      <class name="WebTests">
+        <methods>
+          <include name="deleteUser"/>
+          <include name="beforeMethod"/>
+          <include name="checkNumberOfAllPlugins"/>
+          <include name="setUp"/>
+          <include name="addNewUser"/>
+          <include name="loginToGrafana" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- WebTests -->
+    </classes>
+  </test> <!-- Web Test(failed) -->
+</suite> <!-- Failed suite [Web Suite] -->

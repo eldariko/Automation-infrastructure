@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Web Suite" parallel="false">
+
+    <listeners>
+        <listener class-name="utilities.Listener"/>
+    </listeners>
+    <!--        Need to connect to Grafana Server        -->
+    <test name="Web Test">
+        <parameter name="Platform" value="web"/>
+        <parameter name="Browser" value="chrome"/>
+        <parameter name="URL" value="http://localhost:3000"/>
+        <parameter name="Timeout" value="10"/>
+        <parameter name="csvFile" value="./DDTFiles/web.csv"/>
+        <parameter name="ActiveDB" value="no"/>
+        <parameter name="DBURL" value=""/>
+        <parameter name="DBUsername" value=""/>
+        <parameter name="DBPassword" value=""/>
+        <classes>
+            <class name="WebTests"/>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->

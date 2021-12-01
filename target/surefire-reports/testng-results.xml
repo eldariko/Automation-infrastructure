@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Web Suite" duration-ms="18398" started-at="2021-12-01T15:04:24 IST" finished-at="2021-12-01T15:04:42 IST">
+    <groups>
+    </groups>
+    <test name="Web Test" duration-ms="18398" started-at="2021-12-01T15:04:24 IST" finished-at="2021-12-01T15:04:42 IST">
+      <class name="WebTests">
+        <test-method status="PASS" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:WebTests@2449cff7]" name="setUp" is-config="true" duration-ms="5171" started-at="2021-12-01T15:04:24 IST" finished-at="2021-12-01T15:04:29 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[web]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://localhost:3000]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[./DDTFiles/web.csv]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:WebTests@2449cff7]" name="beforeMethod" is-config="true" duration-ms="241" started-at="2021-12-01T15:04:29 IST" finished-at="2021-12-01T15:04:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void WebTests.loginToGrafana(java.lang.String,java.lang.String) throws org.sikuli.script.FindFailed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginToGrafana(java.lang.String,java.lang.String)[pri:0, instance:WebTests@2449cff7]" name="loginToGrafana" duration-ms="4554" started-at="2021-12-01T15:04:30 IST" description="Web Test - loginToGrafana" data-provider="data-provider" finished-at="2021-12-01T15:04:34 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToGrafana -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:WebTests@2449cff7]" name="beforeMethod" is-config="true" duration-ms="20" started-at="2021-12-01T15:04:35 IST" finished-at="2021-12-01T15:04:35 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void WebTests.addNewUser()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="addNewUser()[pri:0, instance:WebTests@2449cff7]" name="addNewUser" duration-ms="2138" started-at="2021-12-01T15:04:35 IST" depends-on-methods="WebTests.loginToGrafana" finished-at="2021-12-01T15:04:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewUser -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:WebTests@2449cff7]" name="beforeMethod" is-config="true" duration-ms="21" started-at="2021-12-01T15:04:37 IST" finished-at="2021-12-01T15:04:37 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void WebTests.checkNumberOfAllPlugins() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="checkNumberOfAllPlugins()[pri:0, instance:WebTests@2449cff7]" name="checkNumberOfAllPlugins" duration-ms="3829" started-at="2021-12-01T15:04:37 IST" description="Number of Plugins" depends-on-methods="WebTests.loginToGrafana" finished-at="2021-12-01T15:04:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkNumberOfAllPlugins -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:WebTests@2449cff7]" name="beforeMethod" is-config="true" duration-ms="10" started-at="2021-12-01T15:04:41 IST" finished-at="2021-12-01T15:04:41 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void WebTests.deleteUser() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="deleteUser()[pri:0, instance:WebTests@2449cff7]" name="deleteUser" duration-ms="1397" started-at="2021-12-01T15:04:41 IST" depends-on-methods="WebTests.loginToGrafana" finished-at="2021-12-01T15:04:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUser -->
+      </class> <!-- WebTests -->
+    </test> <!-- Web Test -->
+  </suite> <!-- Web Suite -->
+</testng-results>
