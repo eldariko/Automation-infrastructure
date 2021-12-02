@@ -5,10 +5,6 @@
 
 Automation infrastructure with a TestNG framework and a Page-Object-Model design pattern for testing applications on multiple platforms.
 
-Jenkins is used to schedule executions of the Test Suites profiles for each platform.
-
-Allure Report system is used as the main reporting system.
-
 
 ## Overview
 
@@ -21,24 +17,23 @@ This project performs automated testing of various applications:
 
 ### Infrastructure includes:
 
-* Page object model design pattern
-* External files Support
-* Failure mechanisms
-* Electron driver
-* Reporting system (video recordings)
-* API support
-* Database support
-* CI & CD support
-* Support for different client browsers
-* Automation Graphical elements support
+* Page object model design pattern.
+* External files Support.
+* Electron driver.
+* Reporting system (video recordings).
+* API support.
+* Database support.
+* CI&CD support.
+* Support for different client browsers.
+* Automation Graphical elements support.
 
 ### Applications tested:
 
-* Grafana - Web based application tested with WebDriver
-* Grafana API - Web API tested with REST Assuard
-* UK Mortgage Calculator - Mobile application tested with Appium
-* TodoList Desktop application tested with ElectronDriver
-* Windows Calculator - Desktop application tested with WinAppDriver
+* Grafana - Web based application tested with WebDriver.
+* Grafana API - Web API tested with REST Assuard.
+* TodoList Desktop application tested with ElectronDriver.
+* Windows Calculator - Desktop application tested with WinAppDriver.
+* UK Mortgage Calculator - Mobile application tested with Appium.
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install mvn.
