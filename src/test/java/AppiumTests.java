@@ -20,7 +20,8 @@ import java.time.Duration;
 public class AppiumTests extends CommonOps {
 
     @Test(description = "Test01 - Mortgage Calculation", dataProvider = "data-provider", dataProviderClass = ManageDDT.class)
-    public void test_01(String amount, String term, String rate, String expected) {
+    @Description("Test01 - Mortgage Calculation")
+    public void test_01_MortgageCalculation(String amount, String term, String rate, String expected) {
         AppiumWorkflow.calculateMortgage(amount, term, rate);
         VerificationActions.assertEquals(mortgagePage.getTxt_repayment().getText(), expected);
     }

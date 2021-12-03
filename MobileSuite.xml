@@ -19,7 +19,7 @@
         <classes>
             <class name="AppiumTests">
                 <methods>
-                    <include name="test_01"/>
+                    <include name="test_01_MortgageCalculation"/>
                 </methods>
             </class>
         </classes>

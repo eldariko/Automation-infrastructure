@@ -60,7 +60,7 @@ public class CommonOps extends Base {
         }
     }
 
-
+    @Step("SetUp: closeSession")
     @AfterClass
     public void closeSession() {
         if (activeDB.equalsIgnoreCase("yes")) {
@@ -76,6 +76,7 @@ public class CommonOps extends Base {
         }
     }
 
+    @Step("SetUp: beforeMethod")
     @BeforeMethod
     public void beforeMethod(Method method) {
         if (!platform.equalsIgnoreCase("api")) {
@@ -88,7 +89,7 @@ public class CommonOps extends Base {
     }
 
 
-
+    @Step("SetUp: initMobile")
     public void initMobile() {
         dc = new DesiredCapabilities();
         dc.setCapability("reportDirectory", reportDirectory);
@@ -97,7 +98,6 @@ public class CommonOps extends Base {
         dc.setCapability(MobileCapabilityType.UDID, p.getProperty("UDID"));
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, p.getProperty("APP_PACKAGE"));
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, p.getProperty("APP_ACTIVITY"));
-
 
 
         try {
@@ -115,6 +115,7 @@ public class CommonOps extends Base {
 
     }
 
+    @Step("SetUp: initWeb")
     public static void initWeb() {
 
         switch (browser) {
@@ -162,14 +163,14 @@ public class CommonOps extends Base {
         initWebPages();
     }
 
-    @Step
+    @Step("SetUp: initApi")
     public static void initApi() {
         RestAssured.baseURI = url;
         request = RestAssured.given();
         request.header("Content-Type", "application/json");
     }
 
-    @Step
+    @Step("SetUp: initDesktop")
     public static void initDesktop() {
         capabilities = new DesiredCapabilities();
         capabilities.setCapability("app", p.getProperty("APP_ID"));
@@ -184,6 +185,7 @@ public class CommonOps extends Base {
 
     }
 
+    @Step("SetUp: initElectron")
     public static void initElectron() {
         System.setProperty("webdriver.chrome.driver", p.getProperty("ElectronAppDriverPath"));
         opt = new ChromeOptions();
@@ -192,6 +194,8 @@ public class CommonOps extends Base {
         setWaitTimeOut(driver);
         initElectronPage();
     }
+
+    @Step("SetUp: initParameters")
 
     private static void initParameters(String platform, String browser, String URL, String Timeout, String DDTFile, String ActiveDB, String DBURL, String DBUsername, String DBPassword) {
         Base.platform = platform;
@@ -206,6 +210,7 @@ public class CommonOps extends Base {
 
     }
 
+    @Step("SetUp: setWaitTimeOut")
     private static void setWaitTimeOut(WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(Long.parseLong(timeout), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Integer.parseInt(timeout));

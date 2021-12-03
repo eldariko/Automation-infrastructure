@@ -23,15 +23,15 @@ public class APITests extends CommonOps {
         response.prettyPrint();
     }
 
-    @Test
-    public void test04_DeleteUserById() {
-        APIWorkflows.DeleteRequest("/users/6");
-        response.prettyPrint();
-    }
-
-    @Test
-    public void test05_PutUserPass() {
-        APIWorkflows.PutRequest("/users/2/123");
-        response.prettyPrint();
-    }
+//    @Test
+//    public void test04_DeleteUserById() {
+//        APIWorkflows.DeleteRequest("/users/6");
+//        response.prettyPrint();
+//    }
+//
+//    @Test
+//    public void test05_PutUserPass() {
+//        APIWorkflows.PutRequest("/users/2/123");
+//        response.prettyPrint();
+//    }
 }

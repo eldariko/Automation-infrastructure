@@ -22,17 +22,19 @@ public class WebActions extends CommonOps {
     }
 
     @Step("Enter key")
-    public static void enterKey(WebElement element,String key){
+    public static void enterKey(WebElement element, String key) {
         wait.until((ExpectedConditions.visibilityOf(element)));
         element.clear();
         element.sendKeys(key);
     }
+
     @Step("Element is displayed")
-    public static void elementIsDisplayed(WebElement element){
+    public static void elementIsDisplayed(WebElement element) {
         element.isDisplayed();
     }
+
     @Step("Element is enabled")
-    public static void elementIsEnabled(WebElement element){
+    public static void elementIsEnabled(WebElement element) {
         element.isEnabled();
     }
 
@@ -50,12 +52,14 @@ public class WebActions extends CommonOps {
     public static void assertTrue(boolean flag) {
         Assert.assertTrue(flag);
     }
+
     @Step("Assert if numbers are equals")
-    public static void assertEquals(int number1,int number2){
-        Assert.assertEquals(number1,number2);
+    public static void assertEquals(int number1, int number2) {
+        Assert.assertEquals(number1, number2);
     }
+
     @Step("Assert if strings are equals")
-    public static void assertEquals(String str1,String str2){
-        Assert.assertEquals(str1,str2);
+    public static void assertEquals(String str1, String str2) {
+        Assert.assertEquals(str1, str2);
     }
 }

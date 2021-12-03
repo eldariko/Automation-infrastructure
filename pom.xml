@@ -152,10 +152,10 @@
                             <suiteXmlFiles>
                                 <suiteXmlFile>WebSuite.xml</suiteXmlFile>
                                 <suiteXmlFile>DesktopSuite.xml</suiteXmlFile>
-                                <suiteXmlFile>Web_DB_Suite.xml</suiteXmlFile>
+                                <!--                                <suiteXmlFile>Web_DB_Suite.xml</suiteXmlFile>-->
                                 <suiteXmlFile>ApiSuite.xml</suiteXmlFile>
                                 <suiteXmlFile>ElectronSuite.xml</suiteXmlFile>
-<!--                                <suiteXmlFile>MobileSuite.xml</suiteXmlFile>-->
+                                <suiteXmlFile>MobileSuite.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>

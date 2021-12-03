@@ -9,7 +9,7 @@
     <test name="Desktop Test">
         <parameter name="Platform" value="desktop"/>
         <parameter name="Browser" value=""/>
-        <parameter name="URL" value="http://localhost:4723"/>
+        <parameter name="URL" value="http://localhost:4777"/>
         <parameter name="Timeout" value="10"/>
         <parameter name="csvFile" value="./DDTFiles/web.csv"/>
         <parameter name="ActiveDB" value="no"/>
