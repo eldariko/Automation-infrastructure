@@ -1,8 +1,7 @@
 import extentions.VerificationActions;
-import extentions.WebActions;
+import extentions.UIActions;
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
-import pageObjects.webObject.HomePage;
 import utilities.CommonOps;
 import workflows.WebFlows;
 
@@ -12,6 +11,6 @@ public class Web_DB_Tests extends CommonOps {
     public void test01_loginDB() {
         WebFlows.loginWithDB();
         WebFlows.skipChangePassword();
-        VerificationActions.assertEquals(WebActions.getElementText(homePage.getWelcome_h1()), "Welcome to Grafana");
+        VerificationActions.assertEquals(UIActions.getElementText(homePage.getWelcome_h1()), "Welcome to Grafana");
     }
 }

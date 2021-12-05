@@ -42,8 +42,5 @@ public class APIAction extends CommonOps {
         return response;
     }
 
-    @Step("Assert")
-    public static void AssertEquals(int x, int y) {
-        assertEquals(x, y);
-    }
+
 }

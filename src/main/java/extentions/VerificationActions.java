@@ -19,4 +19,9 @@ public class VerificationActions extends CommonOps {
     public static void assertEquals(String str1, String str2) {
         Assert.assertEquals(str1, str2);
     }
+
+    @Step("Soft Assert Strings")
+    public static void softAssertEqualsString(String str1, String str2) {
+        softAssert.assertEquals(str1, str2);
+    }
 }

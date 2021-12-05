@@ -9,7 +9,7 @@
     <test name="Desktop Test">
         <parameter name="Platform" value="desktop"/>
         <parameter name="Browser" value=""/>
-        <parameter name="URL" value="http://localhost:4777"/>
+        <parameter name="URL" value="http://localhost:4723"/>
         <parameter name="Timeout" value="10"/>
         <parameter name="csvFile" value="./DDTFiles/web.csv"/>
         <parameter name="ActiveDB" value="no"/>
@@ -20,7 +20,7 @@
             <class name="DesktopTests">
                 <methods>
                     <include name="test01_Plus"/>
-                    <!--                    <include name="test02_Minus"/>-->
+                    <include name="test02_Minus"/>
                     <!--                    <include name="test03_Multiply"/>-->
                     <!--                    <include name="test04_Divide"/>-->
                 </methods>

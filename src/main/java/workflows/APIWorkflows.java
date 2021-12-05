@@ -1,6 +1,7 @@
 package workflows;
 
 import extentions.APIAction;
+import extentions.VerificationActions;
 import io.qameta.allure.Step;
 import utilities.CommonOps;
 
@@ -28,6 +29,6 @@ public class APIWorkflows extends CommonOps {
 
     @Step("PutRequest")
     public static void AssertStatusCode(int actual, int expected) {
-        APIAction.AssertEquals(actual, expected);
+        VerificationActions.assertEquals(actual, expected);
     }
 }

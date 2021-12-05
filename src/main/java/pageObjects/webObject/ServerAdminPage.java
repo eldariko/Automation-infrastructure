@@ -79,8 +79,8 @@ public class ServerAdminPage extends CommonOps {
     }
 
     @Step
-    public WebElement getRowByIndex(int index) {
-        return driver.findElement(By.xpath("//*[@id='reactRoot']/div/main/div[3]/div/div[1]/div/div[2]/div[2]/table/tbody/tr[" + index + "]/td[2]"));
+    public WebElement getRowByEmail(String email) {
+        return driver.findElement(By.xpath("//table[@class='filter-table form-inline filter-table--hover']//a[text()='" + email + "']"));
     }
 
     @Step

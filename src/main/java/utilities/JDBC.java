@@ -1,9 +1,12 @@
 package utilities;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JDBC extends Base {
 
@@ -27,9 +30,8 @@ public class JDBC extends Base {
 
     @Description("CREATE TABLE IF NOT EXISTS")
     private static void createTableIfNotExists() {
-        DatabaseMetaData dbm = null;
         try {
-            dbm = con.getMetaData();
+            DatabaseMetaData dbm = con.getMetaData();
             // check if "TableName" table is there
             ResultSet tables = dbm.getTables(null, "users", "user", new String[]{"TABLE"});
             while (tables.next()) {
@@ -80,5 +82,19 @@ public class JDBC extends Base {
         } catch (Exception e) {
             System.out.println("Error Occurred while Closing DB, See Details: " + e);
         }
+    }
+
+    @Step("Get Credentials from Database")
+    public static List<String> getCredentials(String query) {
+        List<String> credentials = new ArrayList<>();
+        try {
+            rs = stmt.executeQuery(query);
+            rs.next();
+            credentials.add(rs.getString(1));
+            credentials.add(rs.getString(2));
+        } catch (Exception e) {
+            System.out.println("Error Occurred while Printing Table Data, See Details: " + e);
+        }
+        return credentials;
     }
 }
