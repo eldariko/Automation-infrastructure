@@ -86,5 +86,4 @@ public class Base {
     protected static String calcApp;
 
     protected static CalculatePage calculatePage;
-    protected static int result;
 }

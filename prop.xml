@@ -2,10 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <comment>Test config file</comment>
-    <!--WEB-->
-    <entry key="url.web_url">https://atidcollege.co.il/Xamples/bmi/</entry>
 
-    <!--MOBILE-->
     <entry key="url.mobile_url">http://localhost:4723/wd/hub</entry>
     <entry key="UDID">3f8868510504</entry>
     <entry key="APP_PACKAGE">com.shivgadhia.android.ukMortgageCalc</entry>
