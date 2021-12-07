@@ -1,4 +1,4 @@
-# Automation Project infrastructure 
+# Automation infrastructure project  
 
 
 ## About
