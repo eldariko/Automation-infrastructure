@@ -33,7 +33,7 @@ This project performs automated testing of various applications:
 * Grafana API - Web API tested with REST Assuard.
 * TodoList Desktop application tested with ElectronDriver.
 * Windows Calculator - Desktop application tested with WinAppDriver.
-* UK Mortgage Calculator - Mobile application tested with Appium.
+* Financial Calculators - Mobile application tested with Appium.
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install mvn.
