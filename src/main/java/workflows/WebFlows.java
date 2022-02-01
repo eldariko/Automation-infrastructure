@@ -74,10 +74,7 @@ public class WebFlows extends CommonOps {
 
     @Step
     public static void enterToPluginsPage() {
-        action = new Actions(driver);
-        wait.until(ExpectedConditions.visibilityOf(homePage.getBtn_serverAdmin()));
-        action.moveToElement(homePage.getBtn_serverAdmin()).build().perform();
-        UIActions.clickOnElement(homePage.getBtn_plugins());
+        UIActions.mouseHover(homePage.getBtn_serverAdmin(), homePage.getBtn_plugins());
     }
 
     @Step

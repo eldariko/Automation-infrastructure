@@ -17,11 +17,11 @@
     <test name="WebTests">
         <classes>
             <class name="WebTests">
-                <parameter name="name" value="yonsatan"></parameter>
-                <parameter name="email" value="yonsi@gmail.com"></parameter>
-                <parameter name="username" value="yonsatan"></parameter>
-                <parameter name="password" value="123456"></parameter>
-                <parameter name="expected" value="214"></parameter>
+                <parameter name="name" value="yonsatan"/>
+                <parameter name="email" value="yonsi@gmail.com"/>
+                <parameter name="username" value="yonsatan"/>
+                <parameter name="password" value="123456"/>
+                <parameter name="expected" value="219"/>
             </class>
         </classes>
     </test> <!-- Test -->

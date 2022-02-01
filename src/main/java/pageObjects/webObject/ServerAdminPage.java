@@ -27,9 +27,9 @@ public class ServerAdminPage extends CommonOps {
     private WebElement btn_deleteUser;
     @FindBy(xpath = "/html/body/div[2]/div/div[2]/div[2]/div[2]/div/div[2]/button/span")
     private WebElement btn_confirmDeleteUser;
-    @FindBy(xpath = "//*[@id='reactRoot']/div/main/div[3]/div/div[1]/div/div[2]/div/div/div[1]/div[2]/div[2]/div/label[1]")
+    @FindBy(xpath = "//label[text()='Installed']/preceding-sibling::label")
     private WebElement btn_viewAllPlugins;
-    @FindBy(xpath = "//*[@id=\"reactRoot\"]/div/main/div[3]/div/div[1]/div/div[2]/div/div/div[2]/div/div")
+    @FindBy(xpath = "//div[@data-testid='plugin-list']/*")
     private List<WebElement> btn_allPlugins;
 
 

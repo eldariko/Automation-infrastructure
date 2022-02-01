@@ -38,6 +38,10 @@ public class UIActions extends CommonOps {
         action.moveToElement(element).build().perform();
     }
 
+    @Step("Mouse Hover 2 Elements & Click")
+    public static void mouseHover(WebElement elem1, WebElement elem2) {
+        action.moveToElement(elem1).moveToElement(elem2).click().build().perform();
+    }
 
     @Step("Perform action ")
     public static void performAction(Action action) {
